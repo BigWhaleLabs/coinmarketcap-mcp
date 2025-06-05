@@ -214,17 +214,15 @@ function createServer({ config }) {
         id: z.string().optional(),
         slug: z.string().optional(),
         address: z.string().optional(),
-        aux: z.string().optional(),
         skip_invalid: z.boolean().optional(),
       },
-      async ({ symbol, id, slug, address, aux, skip_invalid }) => {
+      async ({ symbol, id, slug, address, skip_invalid }) => {
         return handleEndpoint(async () => {
           const data = await makeApiRequest(apiKey, '/v2/cryptocurrency/info', {
             symbol,
             id,
             slug,
             address,
-            aux,
             skip_invalid,
           })
           return formatResponse(data)
