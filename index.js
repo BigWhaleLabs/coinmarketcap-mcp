@@ -98,10 +98,6 @@ async function handleEndpoint(apiCall) {
 }
 
 function getConfig(config) {
-  console.log(
-    'API key:',
-    config?.COINMARKETCAP_API_KEY || process.env.COINMARKETCAP_API_KEY
-  )
   return {
     apiKey: config?.COINMARKETCAP_API_KEY || process.env.COINMARKETCAP_API_KEY,
     subscriptionLevel:
